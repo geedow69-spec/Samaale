@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMAALE - Book Landing Page</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Base Styles: Background-ka Cusub */
+        body {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            /* BACKGROUND WEYN: Dark Blue Casri ah (#0A192F) */
+            background-color: #0A192F; 
+            color: #FFFFFF; /* Qoraalka aasaasiga ah waa Caddaan */
+        }
+        
+        .page-wrapper {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Navigation Links (Wali waa caddaan/light grey) */
+        .page-wrapper h1 {
+            color: #FFFFFF !important;
+        }
+        .page-wrapper nav a {
+            color: #A8A8A8 !important; 
+        }
+
+        /* Animation Keyframes (isla mid ayay ahaanayaan) */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Animation Classes */
+        .animate-header { animation: fadeIn 0.8s ease-out; }
+        .animate-book-cover { animation: scaleIn 1s ease-out 0.2s both, float 3s ease-in-out 1.2s infinite; }
+        .animate-book-info { animation: slideInRight 0.8s ease-out 0.4s both; }
+        .animate-section { animation: fadeInUp 0.8s ease-out both; }
+        .animate-delay-1 { animation-delay: 0.6s; }
+        .animate-delay-2 { animation-delay: 0.8s; }
+        .animate-delay-3 { animation-delay: 1s; }
+        
+        /* Hover Effects */
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .button-hover { transition: all 0.3s ease; }
+        .button-hover:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+
+        /* Line-ka kala gooya sections-ka */
+        .page-wrapper hr {
+            border-color: #30415A !important; 
+        }
+
+        /* Isbeddel Gaar ah oo loogu talagalay Qoraalka Dark Sections-ka ku jira */
+        .dark-section .text-gray-900, 
+        .dark-section .text-gray-700,
+        .dark-section .text-gray-600 {
+            color: #E2E8F0 !important; /* Light text for readability */
+        }
+        .dark-section .text-sm.bg-gray-100 {
+            background-color: #30415A !important; /* Darker background for list items */
+            color: #E2E8F0 !important;
+        }
+        .dark-section .border-l-4.border-blue-600 {
+            border-color: #5B9DD9 !important; /* Midab buluug u dhow */
+        }
+        .dark-section .bg-gray-50 {
+            background-color: #17386D !important; /* Darker background for testimonials */
+        }
+        .dark-section .text-blue-600 {
+             color: #60A5FA !important; /* Light Blue for links */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            
+            <header class="animate-header flex items-center justify-between mb-10">
+                <h1 id="page-title" class="text-2xl font-bold font-inter text-white">SAMAALE</h1>
+                <nav class="flex gap-4">
+                    <a href="#about" class="text-sm hover:text-blue-400 transition duration-300">Xogta Buuga</a>
+                    <a href="#author" class="text-sm hover:text-blue-400 transition duration-300">Qoraaga</a>
+                    <a href="#buy" class="text-sm hover:text-blue-400 transition duration-300">Halkee Laga Iibsan Karaa</a>
+                </nav>
+            </header>
+
+            <section class="dark-section grid gap-8 items-center bg-slate-800 p-6 md:p-10 rounded-2xl shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    
+                    <div class="flex justify-center md:col-span-1">
+                        <img 
+                            src="image_1e96d3.jpg" 
+                            alt="SAMAALE Book Cover showcasing the Language Tree" 
+                            class="animate-book-cover w-64 h-80 object-cover rounded-lg shadow-2xl transform hover:scale-105 transition duration-500"
+                            style="height: 22rem; width: 16rem;"
+                        />
+                    </div>
+                    
+                    <div class="animate-book-info md:col-span-2 text-white">
+                        <h2 id="book-title" class="text-4xl font-extrabold mb-1 font-inter text-white">SAMAALE</h2>
+                        <p id="book-subtitle" class="text-xl text-gray-400 mb-4 font-inter">Maxamed Suldaan Xuseen Bayaxaw (Maxamed-Aar)</p>
+                        
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <a href="#buy" id="buy-button" class="button-hover px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 font-inter">Iibso</a>
+                            <a href="#sample" id="sample-button" class="button-hover px-5 py-3 rounded-lg border border-gray-500 text-gray-200 text-md hover:bg-slate-700 focus:outline-none font-inter">Akhriso Qayb Yar</a>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-sm font-bold uppercase text-gray-400 mb-2 font-inter">Buuggu wuxuu si gaar ah ugu habboon yahay:</h3>
+                            <ul class="grid gap-2 list-none p-0">
+                                <li class="text-sm bg-gray-100 p-3 rounded-md font-inter text-gray-700">Mawduuca: xidhiidhka luqadaha iyo asal ahaan ereyada</li>
+                                <li class="text-sm bg-gray-100 p-3 rounded-md font-inter text-gray-700">Qaab-dhismeed cad oo akhris-saaxiibtinimo leh</li>
+                                <li class="text-sm bg-gray-100 p-3 rounded-md font-inter text-gray-700">Tusaalooyin iyo faallooyin ku saabsan luqadaha Indo-Yurubian iyo Semitic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="my-10 border-t"/>
+
+            <section id="about" class="dark-section animate-section animate-delay-1 hover-lift mt-10 bg-slate-800 p-8 rounded-2xl shadow-lg text-white">
+                <h3 class="text-2xl font-bold mb-3 font-inter text-white">Xogta Buuga</h3>
+                <p class="text-gray-300 leading-relaxed font-inter">Maxamed Suldaan Xuseen Bayaxaw (Maxamed-Aar) -Af-Somaali / Samaale (Samaawi)
+
+Waa daahfur cilmiyeed oo caddaynaya in;
+1- Af Somaligu yahay afkii 1aad ee Aadanaha.
+2. Mar dunida oo idil looga hadli jiray - welina raadkiis (erayo & weedho) joogo
+3. Ilbaxnimooyinkaa waa weynaa ee hore ku wada hadli jireen sida; Fircooniintii, Sumeeriga, Hindus Valley iyo kuwa kale.
+4. Diimo ay haystaan dad ka badan 1.2 bilyan baa Af-Somali ah, sida Hinduga, Budhistaha, Lao/Dao Tzu iyo kuwa kale.
+5. Buug tiro beel ah oo cilmiyo kala duwan sida Philosaphy ( dhur-beeg / sama-qeex) baa af Somali ku qoran.
+Waa cilmi-baaris 25 sano socotay Jaamacado badana laga hubiyey.
+
+Buuggani wuxuu isbedel joogta ku samaynayaa sida aan isu aragno Somali ahaan iyo sida aan dunida u aragno.
+
+Kobci garashadaa oo qayb ka noqo baraarujinta ummaaddeena iyo garashada galladda Eebe noo gaar yeelay 
+
+
+Haddii qofi sheego wax weyn (big claims), caddeymo ka waaweyn baa looga baahanayaa.
+Wuxuu sidaa buuggu caddeymo waafi ah, raadraac leh iyo xujooyin maalgel ah oo aanay cidi diidi karin!
+
+Tusaale afka Sanskrit ka oo  kan ay diimuhu ku qoran yihiin; qoraagu wuxuu ka soo qaatay in ka badan 2000 eray oo xarafka "b" ka bilawda sida ay Latin ahaan u qoran yihiin &  micnahooda -- waana erayo Somalidu taqaan ama kuwa duugga ama nagu cusub aan si yaab leh uga marag kacayno inay Samaale yihiin.
+</p>
+            </section>
+
+            <section id="author" class="dark-section animate-section animate-delay-2 hover-lift mt-10 bg-slate-800 p-8 rounded-2xl shadow-lg text-white">
+                <h3 class="text-2xl font-bold mb-4 font-inter text-white">Qoraaga</h3>
+                <div class="flex items-start gap-6">
+                    <div class="w-24 h-24 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                        MA
+                    </div>
+                    <div>
+                        <h4 id="author-name" class="text-xl font-semibold mb-1 font-inter text-white">Maxamed Suldaan Xuseen Bayaxaw</h4>
+                        <p id="author-bio" class="text-gray-300 leading-relaxed font-inter">Qoraaga waxaa dhiirigeliyay daraasado luqadeed iyo taariikh, buuggan wuxuu sahaminayaa xidhiidhada luqadaha iyo saamayntooda.</p>
+                        <div class="mt-4 flex gap-4">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-500 text-sm font-inter">Website</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-500 text-sm font-inter">Twitter</a>
+                            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-500 text-sm font-inter">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dark-section animate-section animate-delay-3 hover-lift mt-10 bg-slate-800 p-8 rounded-2xl shadow-lg text-white">
+                <h3 class="text-2xl font-bold mb-4 font-inter text-white">Mahadcelinta Akhristayaasha</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-lg border-l-4 border-blue-600 bg-gray-50">
+                        <p class="italic text-gray-300 mb-2 font-inter">"Buuggan wuxuu beddelay aragtidayda — si fiican loo qoray!"</p>
+                        <p class="font-semibold text-sm font-inter text-white">— Maxamuud Cabdiqadir Geedow</p>
+                    </div>
+                    <div class="p-4 rounded-lg border-l-4 border-blue-600 bg-gray-50">
+                        <p class="italic text-gray-300 mb-2 font-inter">"Waa mid waxtar badan, bog walba wuxuu la yimid fikrad cusub."</p>
+                        <p class="font-semibold text-sm font-inter text-white">— Hodan xusseen jaamac</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="buy" class="dark-section animate-section animate-delay-3 hover-lift mt-10 bg-slate-800 p-8 rounded-2xl shadow-lg text-white">
+                <h3 class="text-2xl font-bold mb-4 font-inter text-white">Halkee Laga Iibsan Karaa</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    
+                    <div class="hover-lift p-4 border border-gray-600 rounded-lg">
+                        <h4 class="font-semibold mb-1 font-inter text-white">Mogadishu</h4>
+                        <p class="text-sm text-gray-400 mb-2 font-inter">Maktabadda dhexe</p>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-500 font-inter">Eeg Khariidadda →</a>
+                    </div>
+                    
+                    <div class="hover-lift p-4 border border-gray-600 rounded-lg">
+                        <h4 class="font-semibold mb-1 font-inter text-white">Hargeisa</h4>
+                        <p class="text-sm text-gray-400 mb-2 font-inter">Dukaanka Buugta X</p>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-500 font-inter">Eeg Khariidadda →</a>
+                    </div>
+                    
+                    <div class="hover-lift p-4 border border-gray-600 rounded-lg">
+                        <h4 class="font-semibold mb-1 font-inter text-white">Online</h4>
+                        <p class="text-sm text-gray-400 mb-2 font-inter">Amazon / Soon</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:text-blue-500 font-inter">Iibso Hadda →</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="mt-12 pt-8 border-t border-t-white border-opacity-20 text-center">
+                <p class="text-sm text-white font-inter">© 2025 SAMAALE. Xuquuqda way dhawran yihiin.</p>
+            </footer>
+        </div>
+    </div>
+    
+</body>
+</html>
